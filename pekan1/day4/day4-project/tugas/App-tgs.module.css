@@ -1,0 +1,13 @@
+.btn {
+  padding: 12px;
+  background: royalblue;
+  border-radius: 8px;
+  color: white;
+  margin: 30px;
+}
+.btn2 {
+  padding: 12px;
+  background: orange;
+  border-radius: 8px;
+  color: white;
+}

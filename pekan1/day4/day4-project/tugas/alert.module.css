@@ -1,0 +1,15 @@
+.error {
+    background-color: red;
+    padding: 20px;
+    border: 2px solid black;
+}
+.success {
+    background-color: green;
+    padding: 20px;
+    border: 2px solid black;
+}
+.kodisional {
+    background-color: aqua;
+    padding: 20px;
+    border: 2px solid black;
+}
