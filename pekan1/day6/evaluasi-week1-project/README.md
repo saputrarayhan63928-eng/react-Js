@@ -21,3 +21,6 @@ Aplikasi Todo sederhana yang dibuat untuk mendemonstrasikan dasar-dasar React: k
 ## Catatan
 - Menggunakan `Date.now()` untuk ID cepat. Ganti dengan UUID jika Anda menduga adanya tabrakan.
 - Tidak ada persistensi (localStorage atau backend) yang disertakan untuk menjaga kode tetap fokus pada React.
+
+## Code Deploy
+https://react-js-two-steel.vercel.app/
