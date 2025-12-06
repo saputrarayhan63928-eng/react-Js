@@ -1,0 +1,69 @@
+:root{
+--bg: #f3f4f6;
+--card: #ffffff;
+--accent: #2563eb;
+--muted: #6b7280;
+}
+
+
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+body{
+margin:0;
+font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+background: linear-gradient(180deg, var(--bg), #ffffff);
+display:flex;
+align-items:center;
+justify-content:center;
+padding:24px;
+}
+
+
+.app-container{width:100%; max-width:520px}
+
+
+.todo-card{
+background:var(--card);
+border-radius:12px;
+padding:20px;
+box-shadow:0 6px 18px rgba(15,23,42,0.06);
+}
+
+
+.title{margin:0 0 12px 0; font-size:20px}
+
+
+.todo-form{display:flex; gap:8px; margin-bottom:12px}
+.input{flex:1; padding:10px 12px; border-radius:8px; border:1px solid #e5e7eb}
+.btn-inline{padding:10px 12px; border-radius:8px; border:none; background:var(--accent); color:#fff; cursor:pointer}
+
+
+.filter-row{display:flex; justify-content:space-between; align-items:center; margin-bottom:12px}
+.filters{display:flex; gap:8px}
+.filter-btn{padding:6px 10px; border-radius:8px; border:1px solid transparent; background:transparent; cursor:pointer}
+.filter-btn.active{background:var(--accent); color:#fff}
+
+
+.filter-actions{display:flex; gap:12px; align-items:center}
+.btn-clear{background:transparent; border:none; color:var(--muted); cursor:pointer}
+.count{color:var(--muted)}
+
+
+.todo-list{list-style:none; padding:0; margin:0}
+.todo-item{display:flex; align-items:center; justify-content:space-between; padding:8px 0; border-bottom:1px dashed #eef2ff}
+.todo-left{display:flex; gap:10px; align-items:center}
+.todo-text{cursor:pointer}
+.todo-item.completed .todo-text{ text-decoration:line-through; color:var(--muted)}
+.btn-delete{background:transparent; border:none; color:#dc2626; cursor:pointer}
+
+
+.empty{color:var(--muted); text-align:center}
+.meta{display:flex; justify-content:space-between; margin-top:12px; color:var(--muted); font-size:13px}
+
+
+/* Responsive */
+@media (max-width:480px){
+.app-container{padding:0 8px}
+.title{font-size:18px}
+.btn-inline{padding:8px 10px}
+}
