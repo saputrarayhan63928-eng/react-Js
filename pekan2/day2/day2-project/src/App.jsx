@@ -7,44 +7,48 @@ import PageStatus from './component/SwictsCase'
 import ProductList from './component/ArrayList'
 
 
-function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const handleLoginClick = () => {
-    setIsLoggedIn(true);
-  }
 
-  const handleLogoutClick = () => {
-    setIsLoggedIn(false);
-  }
+
+import StatusDetector from './component2/StatusDetector'
+import MailboxUser from './component2/MailboxUser'
+import StatusFunction from './component2/SwitchStatus'
+import ProductListData from './component2/ProduckList'
+
+
+
+function App() {
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // const handleLoginClick = () => {
+  //   setIsLoggedIn(true);
+  // }
+
+  // const handleLogoutClick = () => {
+  //   setIsLoggedIn(false);
+  // }
 
   const [dataStatus, setDataStatus] = useState('loading');
 
   const changeStatus = () => {
-    const statuses = ['loading', 'success', 'error', 'unknown'];
+    const statuses = ['Loading', 'Success', 'Error', 'unknown'];
     const currentIndex = statuses.indexOf(dataStatus);
     const nextIndex = (currentIndex + 1) % statuses.length;
     setDataStatus(statuses[nextIndex]);
   };
 
   const yourMessages = ['Pesan 1', 'Pesan 2', 'Pesan 3'];
-  const emptyMessages = [];
+  // const emptyMessages = [];
+  const Status = true;
 
   return (
     <>
-    <div className="App">
-      <h1>Selamat Datang di Conditional Rendering dan List</h1>
-      <LoginBtn isLoggedIn={isLoggedIn}  onClick = {isLoggedIn ? handleLogoutClick : handleLoginClick} />
-    </div>
-    <MailBox unreadMessages={yourMessages} />
-    <MailBox unreadMessages={emptyMessages} />
+      <div className="App">
+       < StatusDetector checkInternet={Status} />
+       {Status ? <MailboxUser unreadMessages={yourMessages} /> : <p>Tidak Bisa Memuat Apa Apa</p>}
+        <StatusFunction Status={dataStatus} />
+        <button onClick={changeStatus}>Change Data Status</button>
 
-     <div>
-      <h3>Status Data:</h3>
-      <PageStatus status={dataStatus} />
-      <button onClick={changeStatus}>Ubah Status</button>
-    </div>;
-    <ProductList />
-    
+        <ProductListData />
+      </div>
   </>
   )
 }
