@@ -1,16 +1,19 @@
-import DisplayProduk from './component/DisplayProduk'
-  
-
+import { CartProvider } from "./context/CartContext";
+import { ThemeProvider } from "./context/ThemeContext";
+import Home from "./pages/Home";
+import "./App.css";
 
 function App() {
-
-
   return (
     <>
-    <h1>Xonic Shop</h1>
-    <DisplayProduk/>
+    <h1>List Produk</h1>
+    <ThemeProvider>
+      <CartProvider>
+        <Home />
+      </CartProvider>
+    </ThemeProvider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
