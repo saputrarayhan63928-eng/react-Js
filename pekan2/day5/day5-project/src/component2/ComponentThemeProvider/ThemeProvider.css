@@ -1,0 +1,15 @@
+.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.dark {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+.header,
+.content {
+  padding: 16px;
+  margin: 8px 0;
+}
