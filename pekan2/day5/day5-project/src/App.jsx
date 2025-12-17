@@ -21,7 +21,7 @@ function App() {
       {/* <DuitConverter/> */}
       {/* <Main/> */}
       {/* <PerentComponent/> */}
-      {/* <AksiReducer/> */}
+      <AksiReducer/>
 
       {/* ThemProvider Component */}
       <ThemeProvider>
