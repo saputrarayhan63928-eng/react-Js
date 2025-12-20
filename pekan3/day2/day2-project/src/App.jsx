@@ -1,66 +1,51 @@
-import React, { useState, useEffect } from 'react';
 import './App.css';
 
-// Custom Hook untuk fetching data
-function useFetch(url) {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+// import ToggleButton from './component/CreateASimpleCustomHook/component/ToggleButton';
+// import ToggleSwitch from './component/CreateASimpleCustomHook/component/ToggleSwitch';
 
-  useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      setError(null);
-      try {
-        const response = await fetch(url);
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const result = await response.json();
-        setData(result);
-      } catch (err) {
-        setError(err);
-      } finally {
-        setLoading(false);
-      }
-    };
+// import PostDetail from './component/EkstraksiLogicToCustomHook/component/PostDetail';
 
-    fetchData();
-  }, [url]); // Effect dijalankan ulang jika URL berubah
+// import CounterPanel from './component/HooksComposition/component/CounterPanel';
 
-  return { data, loading, error }; // Mengembalikan state
-}
+// import SimpleFrom from './component/CustomHookForFormHandling/component/SimpleForm';
 
-// Komponen yang menggunakan Custom Hook useFetch
-function PostViewer({ postId }) {
-  const { data: post, loading, error } = useFetch(`
-    https://jsonplaceholder.typicode.com/posts/${postId}
-  `);
+import UserName from './component/CustomHookWithLocalStorage/component/localStorageExample/UserName';
+import ToggleTheme from './component/CustomHookWithLocalStorage/component/localStorageExample/ThemeToggle';
 
-  if (loading) return <p>Memuat postingan...</p>;
-  if (error) return <p>Terjadi kesalahan: {error.message}</p>;
-  if (!post) return <p>Postingan tidak ditemukan.</p>;
+function App(){
 
-  return (
-    <div>
-      <h3>{post.title}</h3>
-      <p>{post.body}</p>
-    </div>
-  );
-}
+  return(
+    <>
+    {/* <div>
+      <h2>Custom hooks: useToggle</h2>
 
-function App() {
-  const [currentPostId, setCurrentPostId] = useState(1);
+      <ToggleButton/>
+      <ToggleSwitch/>
+    </div> */}
 
-  return (
-    <div>
-      <h2>Contoh Hooks Composition (useFetch)</h2>
-      <PostViewer postId={currentPostId} />
-      <button onClick={() => setCurrentPostId(prevId => prevId + 1)}>
-        Lihat Postingan Berikutnya
-      </button>
-    </div>
-  );
+      {/* <div>
+        <h1>useFetch Custom Hook</h1>
+        <PostDetail/>
+      </div> */}
+{/* 
+      <div>
+        <h2>Hooks Composition</h2>
+        <CounterPanel/>
+      </div> */}
+
+      {/* <div>
+        <h1>Custoom Hooks: useFrom</h1>
+        <SimpleFrom/> 
+      </div> */}
+
+        <div>
+          <h1>Custom Hooks: useLocalStorage</h1>
+          <UserName/>
+          <ToggleTheme/>
+        </div>
+
+    </>
+  )
 }
 
 export default App;
