@@ -1,0 +1,268 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* =========================
+   GLOBAL
+========================= */
+body {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  font-family: system-ui, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin: 24px 0;
+}
+
+/* =========================
+   PRODUCT GRID
+========================= */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* =========================
+   PRODUCT CARD
+========================= */
+.product-card {
+  background-color: #2a2a2a;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.product-card h4 {
+  font-size: 14px;
+  margin: 8px 0;
+  height: 40px;
+  overflow: hidden;
+}
+
+.product-card .price {
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+.product-card button {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+
+.product-card button:hover {
+  background-color: #43a047;
+}
+
+/* =========================
+   CART SECTION
+========================= */
+.cart-container {
+  max-width: 1200px;
+  margin: 48px auto;
+  padding: 24px;
+  background-color: #1f1f1f;
+  border-radius: 12px;
+}
+
+.cart-container h3 {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+/* =========================
+   CART GRID
+========================= */
+.cart-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* =========================
+   CART ITEM
+========================= */
+.cart-item {
+  background-color: #2b2b2b;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+}
+
+.cart-item img {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.cart-item h4 {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.cart-item p {
+  margin-bottom: 12px;
+}
+
+.remove-btn {
+  background-color: #e53935;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+}
+
+.remove-btn:hover {
+  background-color: #d32f2f;
+}
+
+/* =========================
+   CART SUMMARY
+========================= */
+.cart-summary {
+  margin-top: 32px;
+  text-align: right;
+}
+
+.clear-btn {
+  margin-top: 12px;
+  background-color: #ff9800;
+  border: none;}
+
+
+  /* ================================
+  NavBar
+  =================================== */
+.navbar {
+  background-color: #333;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.a{
+  color: white;
+  text-decoration: none;
+  margin: 0 1rem;
+}
+
+/* ================================
+Button
+================================ */
+
+.button {
+  min-width: 120px;
+
+  position: relative;
+  cursor: pointer;
+
+  padding: 12px 17px;
+  border: 0;
+  border-radius: 7px;
+
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  background: radial-gradient(
+    ellipse at bottom,
+    rgba(71, 81, 92, 1) 0%,
+    rgba(11, 21, 30, 1) 45%
+  );
+
+  color: rgb(255, 255, 255, 0.66);
+
+  transition: all 1s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+.button::before {
+  content: "";
+  width: 70%;
+  height: 1px;
+
+  position: absolute;
+  bottom: 0;
+  left: 15%;
+
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  opacity: 0.2;
+
+  transition: all 1s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+.button:hover {
+  color: rgb(255, 255, 255, 1);
+  transform: scale(1.1) translateY(-3px);
+}
+
+.button:hover::before {
+  opacity: 1;
+}
